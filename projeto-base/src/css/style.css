@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
+
+.collapse{
+    display: flex;
+    justify-content: flex-end;
+}
+
+/**/
+.servicos-flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.p2{
+    padding-right: 10px;
+}
+
+
+.navbar-brand{
+    font-family: 'Rubik Moonrocks', cursive;
+    font-size: 35px;
+}
+
+
+/* Formulario */
+.formulario-pet{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+                                                /* Nossos clientes falam */
+
+ .depoimentos-img{
+    height: 150px;
+    width: 150px;
+    border-radius: 200px;
+}
+
+.nossosclientes-alinhamento{
+    padding: 12px;
+    background-color: rgb(172, 172, 172);
+    text-align: center;
+    border-radius: 25px;
+}
+
+/*Flex Estrela*/
+.div-star{
+    display: flex;
+}
+
+/* Tamanho da Estrela*/
+.star{
+    height: 35px;
+}
+
+.active{
+    display: none;
+}
+
+.mobile-align-01{
+    padding-top: 60px;
+}
+
+/* Tamanho de tela para smartphones apartir de 0px a 599px*/
+
+@media screen and (max-width: 600px) {
+    .img-carrousel{
+        height: 200px;
+    }
+    .esconder-col{
+        display: none;
+    }
+
+    .active{
+        display:block;
+        position: relative;
+        text-align: center;
+    }
+    .mobile-align{
+        position: relative;
+        left: 25%;
+        text-align: center;
+    }
+  }
