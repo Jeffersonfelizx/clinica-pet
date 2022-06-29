@@ -1,7 +1,7 @@
 import express from "express";
-import handlebars from "express-handlebars";
+import {engine} from 'express-handlebars';
 /* Importaçao do Banco de dados  */ 
-import db from "./src/config/db.js";
+import db from "./config/db.js";
 
 /* Pelo amor de deus nunca apague isto aqui, foi a unica soluçao encontrada na ultima camada da deepweb*/
 import { fileURLToPath } from 'url';
@@ -16,19 +16,12 @@ const app = express()
 app.use(express.json())
 
 /*  Importaçao dos arquivos estaticos */
-app.use(express.static(__dirname + '/src/static'));
+app.use(express.static(__dirname + '/public'));
 
-/* Importaçao do Handlebars ->  Template*/
-/* Procurando uma soluçao*/
-
-/*
-const hbs = handlebars.create({
-    defaultLayout: "main"}
-    )
-app.engine('handlebars', () => hbs )
-app.set('view engine', 'handlebars')
-*/
-
+/* Handlebars */
+app.engine('handlebars', engine());
+app.set('view engine', 'handlebars');
+app.set('views', './views');
 
 /* Banco de dados e tratamento de erros */
 db.on('error', ()=> {
@@ -39,13 +32,6 @@ db.once("open",() => {
     console.log("Conexao com o banco de dados foi realizada com sucesso")
 });
 
-
-/* Consumo de API*//*
-let CEP = (CEP) =>{
-    let API = `https://viacep.com.br/ws/${CEP}/json/`
-    return API.json()
-}*/
-
 /* Estruturaçao do Login */
 
 /* O`que precisamos fazer ?, precisamos comparar se o login criado e se foi criando trazer a resposta se sim ou nao*/
@@ -53,26 +39,15 @@ let CEP = (CEP) =>{
 /* Rotas Principal*/
 app.get('/',(req,res) =>{
     /* Enviar um arquivo html*/
-    res.sendFile(__dirname + '/src/templates/index.html')
+    res.render('index')
 } )
 /* Rota Loja */
 app.get('/loja',(req,res) => {
-    res.sendFile(__dirname + '/src/templates/loja.html')
+    res.render('loja')
 })
 /* Rota Login */
-app.get('/login',(req,res) => {
-    res.sendFile(__dirname + '/src/templates/login.html')
-})
-/* Rota Loginacept */
-/* Pagina só sera mostrada se estiver logado */
-app.get('/loginacept',(req,res) => {
-    res.sendFile(__dirname + '/src/templates/loginacept.html')
-
-})
-/* Rota registre */
-app.get('/registro',(req,res) => {
-    res.sendFile(__dirname + '/src/templates/registre.html')
-
+app.get('/registre',(req,res) => {
+    res.render('registre')
 })
 
 /* Exportando os modulos para serem utilizados em outro lugar */

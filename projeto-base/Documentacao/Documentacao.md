@@ -3,6 +3,15 @@
 - npm install express-handlebars
 - npm install mongoose 
 
+## obs: nodemon
+-- Ao baixar o nodemon verifique se está abrindo vunerabilidades!!!
+Se caso demonstrar vinerabilidades siga as instruções:
+1°- npm audit fix
+Se continuar as mesmas ou quantidade diferente:
+2°= npm audit fix --force
+Se não houver alteração ou continuar com algum tipo de erro, por favor
+contatar a equipe.
+
 ## Ambiente de Execucao 
  npm run dev # Execucacao do nodemon automatico
 

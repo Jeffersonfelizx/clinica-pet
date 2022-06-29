@@ -26,6 +26,33 @@
             <a class="nav-link" href="#">Planos</a>
             <a class="nav-link" href="#">Contato</a>
             <a class="nav-link" href="loja">Peça pelo site</a>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Login</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Faça o seu login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="form">
+                    <div class="mb-3">
+                        <label for="recipient-email" class="col-form-label">Email:</label>
+                        <input type="email" class="form-control" autocomplete="off" id="recipient-email" placeholder="backend@teamsdevs.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-password" class="col-form-label">Senha:</label>
+                        <input type="password" class="form-control" id="recipient-password" placeholder="senhaescondida" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" href="/registre.html">Registre-se</button>
+                        <button type="submit" class="btn btn-primary" >Entrar</button>
+                    </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+            </div>
           </div>
         </div>
       </div>
